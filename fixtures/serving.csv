@@ -1,0 +1,4 @@
+id,meal,table,served,takeaway,returned,shared_batch
+S1,M1,T1,20,3,4,X1
+S2,M1,T2,15,2,3,X1
+S3,M2,T3,35,2,5,X2

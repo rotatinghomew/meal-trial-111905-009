@@ -1,0 +1,4 @@
+period,window,base_reserved,released_at,refill,staff,promise
+W1,A1,30,12:00,12,U1,20
+W2,A2,24,,8,U1,18
+W1,B1,26,12:00,10,U2,22

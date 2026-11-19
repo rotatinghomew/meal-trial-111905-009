@@ -1,7 +1,5 @@
-# 资料约定
+# 合成业务资料
 
-原始资料均为本地合成。CSV 使用 UTF-8，首行是字段名。
+所有记录均为本地合成样例，CSV 使用 UTF-8。餐次分派、跨桌共用份量和领餐承诺分属不同观测；已经盛出的份量不能再次释放。
 
-`batch_portions` 将同一批的重量分开记账，不是额外来货。available 是最早可从厨房取用时间，review 是保留量最早可核定的时间；没有 held_for 的份可直接分配，有保留的份以 `portion_releases.free_grams` 回执确认仍可分配的量为准（不再从中扣已预留份）。`meal_holds` 指曾对指定餐次承诺的重量，不等同实际已发。`service_blocks` 是分时供餐承诺，orig_min、all_meals_min 分别为原选和实际可供餐最低人数，refill_g 为该段加餐保留量；alternates 为可经解释采取的有序替代服务段。`serving_rules` 是每种菜单正常首次与一次加餐用量，实际发生以发餐、加餐资料为准。
-
-所有重量用克。`trials` 记录同一餐段各窗口被分配的菜单、楼层及配给的备餐批，arm 是分配而非居民选择。`demand` 一行是一位到场者，wanted 是原选、served 是最终菜品，fulfilled 表示领餐，arrival 是分段分钟。requested_size 与 served_size 应分开；`refills` 是已发餐号的加餐，以克为单位。`weighings` 的 plate 限定到单餐、shared 只能定位到整个桶所列范围、unsold 是未售库存，记录不得重叠计算。`batches` 共享单位为克；`diversions` 是缺货窗口让居民去另一窗口的观测，不是发起第二份需求。`plans` 的 claimed_g 是经理已接受或拟接受的实际备餐量；applied 为已执行并不可撤回。`adjustments` 是称重新读数及记录日期。`policy` 定义组合对照的最少配对餐次和三项目标，以到场者为分母；abs_max_waste 是每人浪费克上限，min_original 和 min_fulfilled 是比例下限。
+当前资料：meals.csv（3 条）；serving.csv（3 条）；capacity.csv（3 条）。空字段表示未知或尚未回执，不代表零值或否定；时间沿用同一本地时钟，只有明确的修订关联才能替代旧事实。
