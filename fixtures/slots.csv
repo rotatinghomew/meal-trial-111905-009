@@ -1,0 +1,13 @@
+record_id,record_type,household_id,member_id,goal_id,service,occurred_at,status,slot_id,source
+n001,eligibility,h01,m01,g01,elder-support,2026-01-02,eligible,,intake
+n002,application,h01,m01,g01,elder-support,2026-01-03,requested,,worker
+n003,slot,h01,m01,g01,elder-support,2026-01-05,scheduled,s01,planner
+n004,contact,h01,m01,g01,elder-support,2026-01-07,completed,s01,provider
+n005,eligibility,h01,m02,g02,family-guidance,2026-01-02,eligible,,intake
+n006,application,h01,m02,g02,family-guidance,2026-01-04,requested,,worker
+n007,slot,h01,m02,g02,family-guidance,2026-01-08,cancelled,s02,planner
+n008,eligibility,h02,m03,g03,child-support,2026-01-03,pending,,intake
+n009,application,h02,m03,g03,child-support,2026-01-04,requested,,worker
+n010,slot,h02,m03,g03,child-support,2026-01-09,scheduled,s03,planner
+n011,contact,h02,m03,g03,child-support,2026-01-12,unreachable,s03,provider
+n012,eligibility,h03,m04,g04,elder-support,2026-01-05,eligible,,intake
