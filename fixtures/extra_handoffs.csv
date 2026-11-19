@@ -1,0 +1,8 @@
+id,from_meal,to_meal,kind,portions,received_day
+X1,N31,N32,allocated,12,3
+X2,N31,N32,released,6,3
+X3,E31,E32,allocated,12,3
+X4,E31,E32,destroyed,12,3
+X5,E61,E62,allocated,8,6
+X6,E61,E62,released,4,8
+X7,N61,N62,destroyed,9,6

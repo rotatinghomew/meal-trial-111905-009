@@ -18,3 +18,33 @@ class SourceRecords(unittest.TestCase):
                 if "id" in reader.fieldnames:
                     ids = [row["id"] for row in rows]
                     self.assertEqual(len(ids), len(set(ids)))
+
+    def test_business_references(self):
+        tables = {}
+        for path in FIXTURES.glob("*.csv"):
+            with path.open(encoding="utf-8", newline="") as source:
+                tables[path.stem] = list(csv.DictReader(source))
+        links = (
+            ('meals', 'predecessor', 'meals', 'id'),
+            ('assignments', 'meal', 'meals', 'id'),
+            ('serving', 'meal', 'meals', 'id'),
+            ('serving', 'person', 'assignments', 'id'),
+            ('serving', 'receiver', 'assignments', 'id'),
+            ('weights', 'meal', 'meals', 'id'),
+            ('weights', 'supersedes', 'weights', 'id'),
+            ('followup', 'meal', 'meals', 'id'),
+            ('followup', 'person', 'assignments', 'id'),
+            ('extra_handoffs', 'from_meal', 'meals', 'id'),
+            ('extra_handoffs', 'to_meal', 'meals', 'id'),
+            ('capacity', 'base_stock', 'stock', 'id'),
+            ('capacity', 'refill_stock', 'stock', 'id'),
+            ('tickets', 'stock', 'stock', 'id'),
+            ('tickets', 'plan', 'capacity', 'id'),
+            ('tickets', 'prior', 'tickets', 'id'),
+        )
+        for child, field, parent, key in links:
+            with self.subTest(table=child, field=field):
+                known = {row[key] for row in tables[parent]}
+                for row in tables[child]:
+                    if row[field]:
+                        self.assertIn(row[field], known)

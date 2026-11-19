@@ -1,0 +1,12 @@
+id,plan,stock,kind,portions,at,prior
+K1,H1,P1,issued,23,08:00,
+K2,H2,P1,reserved,18,08:05,
+K3,H3,P2,issued,19,08:10,
+K4,H4,P2,issued,20,08:15,
+K5,H1,P1,consumed,21,11:10,K1
+K6,H1,P3,consumed,8,11:20,
+K7,H2,P3,lost,4,11:21,
+K8,H1,P1,release_confirmed,2,11:40,K1
+K9,H3,P2,lost,10,11:50,
+K10,H3,P2,consumed,16,12:00,K3
+K11,H3,P2,release_confirmed,3,12:10,K3
